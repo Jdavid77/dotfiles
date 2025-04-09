@@ -2,4 +2,5 @@
 [tools]
 bat = "latest"
 chezmoi = "latest"
+vim = "latest"
 
