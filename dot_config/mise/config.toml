@@ -2,4 +2,4 @@
 [tools]
 bat = "latest"
 chezmoi = "latest"
-
+lsd = "latest"
