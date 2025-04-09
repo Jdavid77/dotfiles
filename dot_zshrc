@@ -1,0 +1,144 @@
+########################################
+# Instant Prompt (Powerlevel10k)
+########################################
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+########################################
+# Prompt Theme (Powerlevel10k)
+########################################
+[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
+
+########################################
+# Homebrew (macOS)
+########################################
+if [[ -f "/opt/homebrew/bin/brew" ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
+########################################
+# Tools Setup
+########################################
+
+# mise (runtime manager)
+if command -v mise > /dev/null; then
+  eval "$($HOME/.local/bin/mise activate zsh)"
+fi
+
+# bat (cat replacement)
+if command -v bat > /dev/null; then
+  alias cat="bat"
+fi
+
+# lsd (ls replacement)
+if command -v lsd > /dev/null; then
+  alias ls="lsd"
+  alias ll="ls -lgh"
+  alias la='ls -lathr'
+  alias lla='ls -lgha'
+  alias lt='ls --tree'
+fi
+
+# Set default editor
+if command -v nvim > /dev/null; then
+  export EDITOR="nvim"
+  export VISUAL="nvim"
+fi
+
+# SDKMAN
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
+
+# Talhelper CLI completion
+source <(talhelper completion zsh)
+
+########################################
+# Zsh Settings
+########################################
+
+# vi mode
+bindkey -v
+export KEYTIMEOUT=1
+
+# History settings
+HISTSIZE=10000
+HISTFILE=~/.zsh_history
+SAVEHIST=$HISTSIZE
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
+
+# Completion config
+autoload -Uz compinit && compinit -C
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' menu no
+
+########################################
+# Zinit Plugin Manager & Plugins
+########################################
+
+# Zinit path setup
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+
+# Download if not present
+if [ ! -d "$ZINIT_HOME" ]; then
+  mkdir -p "$(dirname $ZINIT_HOME)"
+  git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+fi
+
+# Source Zinit
+source "${ZINIT_HOME}/zinit.zsh"
+
+# Load Powerlevel10k
+zinit ice depth=1
+zinit light romkatv/powerlevel10k
+
+# Zsh plugins
+zinit ice wait'0'; zinit light zsh-users/zsh-syntax-highlighting
+zinit ice wait'0'; zinit light zsh-users/zsh-autosuggestions
+zinit ice wait'1'; zinit light zsh-users/zsh-completions
+
+# Oh My Zsh plugin snippets
+zinit snippet OMZP::azure
+zinit snippet OMZP::kubectl
+zinit snippet OMZP::fluxcd
+
+# Replay cd hooks (zinit housekeeping)
+zinit cdreplay -q
+
+########################################
+# Aliases
+########################################
+alias ls='ls --color'
+alias c='clear'
+alias sz='source .zshrc'
+alias vim='nvim'
+alias kx='kubectx'
+alias bfix='brew cleanup ; brew doctor ; brew update ; brew upgrade'
+
+# Kubeconfig updater
+alias ukf="_updateKubeconfig"
+_updateKubeconfig() {
+  echo "Updating kubeconfig"
+  cd "${HOME}/.kube"
+  ./update-kubeconfig.sh
+  echo "Kubeconfig updated."
+  cd -
+}
+
+########################################
+# Custom Environment Variables
+########################################
+export GOPATH=$HOME/go
+export PATH=${GOPATH}/bin:/usr/local/sbin:${PATH}
+
+export SOPS_AGE_KEY_FILE=~/.config/sops/age/keys.txt
+export LANG="en_US.UTF-8"
