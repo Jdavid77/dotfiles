@@ -3,3 +3,5 @@
 bat = "latest"
 chezmoi = "latest"
 lsd = "latest"
+node = "latest"
+neovim = "latest"
