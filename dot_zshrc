@@ -47,12 +47,14 @@ if command -v nvim > /dev/null; then
   export VISUAL="nvim"
 fi
 
+# Talhelper Completion
+if command -v talhelper > /dev/null; then
+  source <(talhelper completion zsh)
+fi
+
 # SDKMAN
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
-
-# Talhelper CLI completion
-source <(talhelper completion zsh)
 
 ########################################
 # Zsh Settings
