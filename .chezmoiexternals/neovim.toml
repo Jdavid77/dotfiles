@@ -3,8 +3,5 @@ type = "archive"
 url = "https://github.com/LazyVim/starter/archive/refs/heads/main.tar.gz"
 stripComponents = 1
 exclude = [
-  "**/config/autocmds.lua",
-  "**/keymaps.lua",
-  "**/options.lua",
-  "**/init.lua",
+  "**/options.lua"
 ]
