@@ -132,6 +132,5 @@ _updateKubeconfig() {
 ########################################
 export GOPATH=$HOME/go
 export PATH=${GOPATH}/bin:/usr/local/sbin:${PATH}
-export TERM=xterm-256color
 export SOPS_AGE_KEY_FILE=~/.config/sops/age/keys.txt
 export LANG="en_US.UTF-8"
