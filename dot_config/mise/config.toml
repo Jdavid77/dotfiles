@@ -5,3 +5,6 @@ chezmoi = "latest"
 node = "latest"
 neovim = "latest"
 lsd = "latest"
+
+[settings]
+idiomatic_version_file_enable_tools = ["python"]
