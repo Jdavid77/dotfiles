@@ -1,0 +1,12 @@
+{{- $devcontainer := false -}}
+{{- if or (eq (env "DEVPOD") "true") (eq (env "REMOTE_CONTAINERS") "true") -}}
+{{-   $devcontainer = true -}}
+{{- end -}}
+
+{{- $name := "João Nóbrega" -}}
+{{- $email := "johnynobrega17@gmail.com" -}}
+
+[data]
+  email = {{ $email | quote }}
+  name = {{ $name | quote }}
+  devcontainer = {{ $devcontainer }}

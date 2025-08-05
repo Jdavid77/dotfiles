@@ -12,6 +12,15 @@ fi
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
 ########################################
+# Custom Environment Variables
+########################################
+export GOPATH=$HOME/go
+export PATH=${GOPATH}/bin:/usr/local/sbin:${HOME}/.local/bin:${PATH}
+export SOPS_AGE_KEY_FILE=~/.config/sops/age/keys.txt
+export LANG="en_US.UTF-8"
+
+
+########################################
 # Homebrew (macOS)
 ########################################
 if [[ -f "/opt/homebrew/bin/brew" ]]; then
@@ -127,10 +136,3 @@ _updateKubeconfig() {
   cd -
 }
 
-########################################
-# Custom Environment Variables
-########################################
-export GOPATH=$HOME/go
-export PATH=${GOPATH}/bin:/usr/local/sbin:${PATH}
-export SOPS_AGE_KEY_FILE=~/.config/sops/age/keys.txt
-export LANG="en_US.UTF-8"
