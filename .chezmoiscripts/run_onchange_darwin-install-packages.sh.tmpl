@@ -1,6 +1,5 @@
-{{ if and (not .devcontainer) (eq .chezmoi.os "darwin") -}}
-
 #!/bin/bash
+{{ if and (not .devcontainer) (eq .chezmoi.os "darwin") -}}
 brew bundle --file=/dev/stdin <<EOF
 {{ range .packages.brews -}}
 brew {{ . | quote }}
