@@ -14,17 +14,21 @@ typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 ########################################
 # Custom Environment Variables
 ########################################
-export GOPATH=$HOME/go
-export PATH=${GOPATH}/bin:/usr/local/sbin:${HOME}/.local/bin:${PATH}
+export MISEPATH=${HOME}/.local/bin
+export PATH=/usr/local/sbin:${MISEPATH}:${PATH}
 export SOPS_AGE_KEY_FILE=~/.config/sops/age/keys.txt
 export LANG="en_US.UTF-8"
 
 
 ########################################
-# Homebrew (macOS)
+# Homebrew 
 ########################################
 if [[ -f "/opt/homebrew/bin/brew" ]]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
+if [[ -f "/home/linuxbrew/.linuxbrew/bin/brew" ]]; then
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
 ########################################
@@ -46,15 +50,6 @@ if command -v nvim > /dev/null; then
   export EDITOR="nvim"
   export VISUAL="nvim"
 fi
-
-# Talhelper Completion
-if command -v talhelper > /dev/null; then
-  source <(talhelper completion zsh)
-fi
-
-# SDKMAN
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
 
 ########################################
 # Zsh Settings
