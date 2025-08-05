@@ -17,7 +17,6 @@ packages:
   - 'kubernetes-cli'
   - 'nvm'
   - 'pre-commit'
-  - 'pinentry-mac'
   - 'pinentry'
   - 'sops'
   - 'talosctl'
