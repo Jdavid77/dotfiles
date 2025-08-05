@@ -6,5 +6,5 @@ Inspiration
 
 - https://github.com/bjw-s-labs/dotfiles
 - https://github.com/the-technat/dotfiles
-- https://github.com/rafaribe/dotfiles/blob/main/dot_config/k9s/config.yaml.tmpl
+- https://github.com/rafaribe/dotfiles
 - https://github.com/a-inacio/dotfiles
