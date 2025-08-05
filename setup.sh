@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# used for dev containers
+
 set -euo pipefail
 
 # allacrity info
