@@ -1,6 +1,6 @@
 packages:
   taps:
-  - akeylesslabs/tap
+  - akeylesslabs/tap https://github.com/akeylesslabs/homebrew-tap
   - fluxcd/tap
   brews:
   - 'git'
