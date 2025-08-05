@@ -2,7 +2,6 @@ packages:
   brews:
   - 'git'
   - 'age'
-  - 'akeyless'
   - 'azure-cli'
   - 'cmctl'
   - 'docker'
