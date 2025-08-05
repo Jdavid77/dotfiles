@@ -22,7 +22,6 @@ packages:
   - 'talosctl'
   - 'terraform'
   - 'terragrunt'
-  - 'totp-keychain'
   - 'yq'
   - 'jq'
   - 'fluxcd/tap/flux'
