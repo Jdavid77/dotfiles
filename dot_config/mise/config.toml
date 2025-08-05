@@ -6,6 +6,7 @@ node = "latest"
 neovim = "latest"
 lsd = "latest"
 claude-code = "latest"
+go = "latest"
 
 [settings]
 idiomatic_version_file_enable_tools = ["python"]
