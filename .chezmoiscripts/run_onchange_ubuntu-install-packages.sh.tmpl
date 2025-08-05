@@ -1,5 +1,5 @@
 #!/bin/bash
-{{ if and (not .devcontainer) (eq .chezmoi.os "linux") -}}
+{{ if and (not .devcontainer) (eq .chezmoi.osid "linux-ubuntu") -}}
 brew bundle --file=/dev/stdin <<EOF
 {{ range .packages.taps -}}
 tap {{ . | quote }}
