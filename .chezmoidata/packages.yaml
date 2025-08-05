@@ -5,7 +5,6 @@ packages:
   - 'git'
   - 'age'
   - 'azure-cli'
-  - 'akeylesslabs/tap/akeyless'
   - 'cmctl'
   - 'docker'
   - 'ghorg'
