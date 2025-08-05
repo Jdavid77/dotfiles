@@ -37,3 +37,4 @@ packages:
   - 'visual-studio-code'
   - 'yubico-authenticator'
   - 'yubico-yubikey-manager'
+  - 'tailscale'
