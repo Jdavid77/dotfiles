@@ -1,4 +1,7 @@
 packages:
+  taps:
+  - akeylesslabs/tap
+  - fluxcd/tap
   brews:
   - 'git'
   - 'age'
