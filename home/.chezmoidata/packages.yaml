@@ -21,6 +21,7 @@ packages:
   - 'pre-commit'
   - 'pinentry'
   - 'sops'
+  - 'go'
   - 'talosctl'
   - 'talhelper'
   - 'terraform'
