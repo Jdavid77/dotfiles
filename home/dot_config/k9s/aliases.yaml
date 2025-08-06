@@ -1,0 +1,9 @@
+# $XDG_CONFIG_HOME/k9s/alias.yml
+aliases:
+  sec: v1/secrets
+  sm: monitoring.coreos.com/v1/servicemonitors
+  git: source.toolkit.fluxcd.io/v1/gitrepositories
+  oci: source.toolkit.fluxcd.io/v1/ocirepositories
+  hr: helm.toolkit.fluxcd.io/v2/helmreleases
+  csr: certmanager.io/certificaterequests
+  http: gateway.networking.k8s.io/v1/httproutes
