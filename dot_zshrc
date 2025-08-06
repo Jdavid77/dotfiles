@@ -22,8 +22,9 @@ export XDG_STATE_HOME="${XDG_STATE_HOME:-$HOME/.local/state}"
 ########################################
 # Custom Environment Variables
 ########################################
-export MISEPATH=${HOME}/.local/bin
-export PATH=/usr/local/sbin:${MISEPATH}:${PATH}
+export LOCAL_PATH=${HOME}/.local/bin
+export KREW_PATH=${HOME}/.krew/bin
+export PATH=/usr/local/sbin:${LOCAL_PATH}:${KREW_PATH}:${PATH}
 export SOPS_AGE_KEY_FILE=~/.config/sops/age/keys.txt
 export LANG="en_US.UTF-8"
 
