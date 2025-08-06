@@ -1,0 +1,22 @@
+########################################
+# .zprofile - Login shell setup
+# Loaded: Only for login shells (before .zshrc)
+########################################
+
+########################################
+# Homebrew Setup
+########################################
+if [[ -f "/opt/homebrew/bin/brew" ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+if [[ -f "/home/linuxbrew/.linuxbrew/bin/brew" ]]; then
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
+
+########################################
+# Runtime Managers
+########################################
+# mise (runtime manager)
+if command -v mise > /dev/null; then
+  eval "$($HOME/.local/bin/mise activate zsh)"
+fi

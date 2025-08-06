@@ -1,4 +1,9 @@
 ########################################
+# .zshrc - Interactive shell configuration
+# Loaded: Only for interactive shells
+########################################
+
+########################################
 # Instant Prompt (Powerlevel10k)
 ########################################
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
@@ -12,58 +17,8 @@ fi
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
 ########################################
-# XDG Base Directory Specification
-########################################
-export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
-export XDG_DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
-export XDG_CACHE_HOME="${XDG_CACHE_HOME:-$HOME/.cache}"
-export XDG_STATE_HOME="${XDG_STATE_HOME:-$HOME/.local/state}"
-
-########################################
-# Custom Environment Variables
-########################################
-export LOCAL_PATH=${HOME}/.local/bin
-export KREW_PATH=${HOME}/.krew/bin
-export PATH=/usr/local/sbin:${LOCAL_PATH}:${KREW_PATH}:${PATH}
-export SOPS_AGE_KEY_FILE=~/.config/sops/age/keys.txt
-export LANG="en_US.UTF-8"
-
-
-########################################
-# Homebrew 
-########################################
-if [[ -f "/opt/homebrew/bin/brew" ]]; then
-  eval "$(/opt/homebrew/bin/brew shellenv)"
-fi
-
-if [[ -f "/home/linuxbrew/.linuxbrew/bin/brew" ]]; then
-  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-fi
-
-########################################
-# Tools Setup
-########################################
-
-# mise (runtime manager)
-if command -v mise > /dev/null; then
-  eval "$($HOME/.local/bin/mise activate zsh)"
-fi
-
-# bat (cat replacement)
-if command -v bat > /dev/null; then
-  alias cat="bat"
-fi
-
-# Set default editor
-if command -v nvim > /dev/null; then
-  export EDITOR="nvim"
-  export VISUAL="nvim"
-fi
-
-########################################
 # Zsh Settings
 ########################################
-
 # vi mode
 bindkey -v
 export KEYTIMEOUT=1
@@ -90,7 +45,6 @@ zstyle ':completion:*' menu no
 ########################################
 # Zinit Plugin Manager & Plugins
 ########################################
-
 # Zinit path setup
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
@@ -121,11 +75,19 @@ zinit snippet OMZP::fluxcd
 zinit cdreplay -q
 
 ########################################
+# Tool-specific Aliases & Settings
+########################################
+# bat (cat replacement)
+if command -v bat > /dev/null; then
+  alias cat="bat"
+fi
+
+########################################
 # Aliases
 ########################################
 alias ls='ls --color'
 alias c='clear'
-alias sz='source .zshrc'
+alias sz='source ~/.zshrc'
 alias vim='nvim'
 alias kx='kubectx'
 alias bfix='brew cleanup ; brew doctor ; brew update ; brew upgrade'
@@ -139,4 +101,3 @@ _updateKubeconfig() {
   echo "Kubeconfig updated."
   cd -
 }
-
