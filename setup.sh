@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # used for dev containers
+
 set -euo pipefail
 
 # alacritty info
@@ -10,10 +11,9 @@ if command -v zsh >/dev/null; then
 fi
 
 if ! command -v chezmoi >/dev/null; then
-  # Just init, don't apply yet
-  sh -c "$(curl -fsLS get.chezmoi.io)" -- init https://github.com/Jdavid77/dotfiles-demo.git
-  
-  echo "Chezmoi initialized. Run 'chezmoi apply' and enter your passphrase when ready."
+  # Set flag to indicate automated setup
+  export AUTOMATED_SETUP=1
+  sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply https://github.com/Jdavid77/dotfiles-demo.git
 fi
 
 exit 0
