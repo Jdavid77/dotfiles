@@ -1,13 +1,5 @@
 #!/usr/bin/env bash
 
-# Chatgpt doing some heavy lifting here
-# Skip in non-interactive environments (like devcontainer setup)
-if [[ ! -t 0 ]] || [[ "${CI:-}" == "true" ]] || [[ -n "${AUTOMATED_SETUP:-}" ]]; then
-    echo "Non-interactive environment detected. Skipping key decryption."
-    echo "Run 'chezmoi apply' interactively later to decrypt the key."
-    exit 0
-fi
-
 if [ ! -f "${HOME}/.config/chezmoi/key.txt" ]; then
     mkdir -p "${HOME}/.config/chezmoi"
     chezmoi age decrypt --output "${HOME}/.config/chezmoi/key.txt" --passphrase "{{ .chezmoi.sourceDir }}/key.txt.age"
