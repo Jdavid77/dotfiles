@@ -14,14 +14,32 @@ export XDG_STATE_HOME="${XDG_STATE_HOME:-$HOME/.local/state}"
 ########################################
 # Custom Environment Variables
 ########################################
-export LOCAL_PATH=${HOME}/.local/bin
-export KREW_PATH=${HOME}/.krew/bin
-export PATH=/usr/local/sbin:${LOCAL_PATH}:${KREW_PATH}:${PATH}
 export SOPS_AGE_KEY_FILE=~/.config/sops/age/keys.txt
 export LANG="en_US.UTF-8"
-
 # Set default editor
 if command -v nvim > /dev/null; then
   export EDITOR="nvim"
   export VISUAL="nvim"
 fi
+
+########################################
+# Path Variables
+########################################
+
+setopt extended_glob null_glob
+
+path=(
+    $path      
+    $HOME/.local/bin
+    $HOME/.krew/bin
+    $HOME/.akeyless/bin
+    /home/vscode/.local/bin
+    /root/.local/bin
+    /usr/local/sbin
+)
+
+typeset -U path
+path=($^path(N-/))
+
+export PATH
+
