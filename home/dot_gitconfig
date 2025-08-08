@@ -1,0 +1,16 @@
+[user]
+	name = Jdavid77
+	email = {{ .email }}
+	signingkey = ~/.ssh/id_ed25519.pub
+[gpg]
+  format = ssh
+[pull]
+  rebase = true
+[init]
+  defaultBranch = main
+[push]
+  autoSetupRemote = true
+[commit]
+  gpgSign = true
+[core]
+  editor = nvim
