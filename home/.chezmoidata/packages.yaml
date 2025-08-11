@@ -1,4 +1,10 @@
 packages:
+  apt: # needed for homebrew
+  - build-essential
+  - procps
+  - curl
+  - file
+  - git
   taps:
   - fluxcd/tap
   - hashicorp/tap

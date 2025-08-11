@@ -1,6 +1,28 @@
 #!/usr/bin/env bash
+# Install Homebrew
 
 {{ if not .devcontainer -}}
+
+{{ if eq .chezmoi.os "darwin" -}}
+xcode-select -p 1>/dev/null
+if [[ $? -ne 0 ]]; then
+xcode-select --install
+fi
+{{ end -}}
+
+{{ if eq .osid "linux-ubuntu" -}}
+  export DEBIAN_FRONTEND=noninteractive
+
+  if command -v "sudo" > /dev/null; then
+     sudo apt update
+     sudo apt upgrade -y
+     sudo apt install -qq -y {{ range .packages.apt }}{{ . }} {{ end }}
+  else
+     apt update
+     apt upgrade -y
+     apt install -qq -y {{ range .packages.apt }}{{ . }} {{ end }}
+  fi
+{{ end -}}
 
 if which -s brew; then
     echo 'Homebrew is already installed'

@@ -14,6 +14,7 @@ Credit and inspiration from these dotfiles repositories:
 * [rafaribe/dotfiles](https://github.com/rafaribe/dotfiles)
 * [a-inacio/dotfiles](https://github.com/a-inacio/dotfiles)
 * [mischavandenburg/dotfiles](https://github.com/mischavandenburg/dotfiles)
+* [DanielMSchmidt/dotfiles](https://github.com/DanielMSchmidt/dotfiles)
 
 ---
 
