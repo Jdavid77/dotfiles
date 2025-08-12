@@ -14,8 +14,12 @@ packages:
     - discord
     - tailscale
     - chromium
+    - steam
+    - easy-disk-cleaner
+    - nordvpn
     classic:
     - code
+    - alacritty
   brews:
     work:
     - 'azure-cli'
