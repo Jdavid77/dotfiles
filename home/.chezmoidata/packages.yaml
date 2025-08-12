@@ -57,6 +57,7 @@ packages:
     - 'fork'
     - 'google-chrome'
     - 'visual-studio-code'
+    - 'alacritty'
     personal:
     - 'obsidian'
     - 'tailscale'
@@ -64,3 +65,4 @@ packages:
     - 'yubico-yubikey-manager'
     - 'capcut'
     - 'balenaetcher'
+    - 'nordvpn'
