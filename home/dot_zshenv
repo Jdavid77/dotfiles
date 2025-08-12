@@ -33,6 +33,7 @@ path=(
     $HOME/.local/bin
     $HOME/.krew/bin
     $HOME/.akeyless/bin
+    $HOME/go/bin
     /home/vscode/.local/bin
     /root/.local/bin
     /usr/local/sbin
