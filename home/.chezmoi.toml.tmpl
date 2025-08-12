@@ -8,6 +8,17 @@
 {{-   $osid = printf "%s-%s" .chezmoi.os .chezmoi.osRelease.id -}}
 {{- end -}}
 
+
+{{- $isWorkComputer := false -}}
+{{- if and (not $devcontainer) (eq .chezmoi.os "darwin") -}}
+{{-   $isWorkComputer = promptBoolOnce . "isWorkComputer" "Is this your work computer" -}}
+{{- end -}}
+
+{{- $hasGUI := false -}}
+{{- if and (not $devcontainer) (eq $osid "linux-ubuntu") -}}
+{{-   $hasGUI = promptBoolOnce . "hasGUI" "Does this machine have a GUI" -}}
+{{- end -}}
+
 {{- $name := "Jdavid77" -}}
 {{- $email := "johnynobrega17@gmail.com" -}}
 
@@ -16,6 +27,8 @@
   name = {{ $name | quote }}
   devcontainer = {{ $devcontainer }}
   osid = {{ $osid | quote }}
+  hasGUI = {{ $hasGUI }}
+  isWorkComputer = {{ $isWorkComputer }} 
 
 [secret]
   command = "akeyless"

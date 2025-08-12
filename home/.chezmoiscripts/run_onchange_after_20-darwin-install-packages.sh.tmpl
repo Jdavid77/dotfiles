@@ -4,11 +4,20 @@ brew bundle --file=/dev/stdin <<EOF
 {{ range .packages.taps -}}
 tap {{ . | quote }}
 {{ end -}}
-{{ range .packages.brews -}}
+{{ if .isWorkComputer -}}
+{{ range .packages.brews.work -}}
 brew {{ . | quote }}
 {{ end -}}
-{{ range .packages.casks -}}
+{{ range .packages.casks.work -}}
 cask {{ . | quote }}
+{{ end -}}
+{{ else -}}
+{{ range concat .packages.brews.work .packages.brews.personal -}}
+brew {{ . | quote }}
+{{ end -}}
+{{ range concat .packages.casks.work .packages.casks.personal -}}
+cask {{ . | quote }}
+{{ end -}}
 {{ end -}}
 EOF
 {{ end -}}

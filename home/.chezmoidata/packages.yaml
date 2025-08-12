@@ -8,41 +8,52 @@ packages:
   taps:
   - fluxcd/tap
   - hashicorp/tap
+  snaps:
+    vanilla:
+    - spotify
+    - discord
+    - tailscale
+    classic:
+    - code
   brews:
-  - 'age'
-  - 'azure-cli'
-  - 'cmctl'
-  - 'docker'
-  - 'fluxcd/tap/flux'
-  - 'ghorg'
-  - 'git'
-  - 'go'
-  - 'hashicorp/tap/terraform'
-  - 'helm'
-  - 'helmfile'
-  - 'jq'
-  - 'k3d'
-  - 'k9s'
-  - 'krew'
-  - 'kubelogin'
-  - 'kubernetes-cli'
-  - 'kubectx'
-  - 'kustomize'
-  - 'nvm'
-  - 'pinentry'
-  - 'pre-commit'
-  - 'sops'
-  - 'talhelper'
-  - 'talosctl'
-  - 'terragrunt'
-  - 'yq'
+    work:
+    - 'azure-cli'
+    - 'cmctl'
+    - 'docker'
+    - 'fluxcd/tap/flux'
+    - 'ghorg'
+    - 'git'
+    - 'go'
+    - 'hashicorp/tap/terraform'
+    - 'helm'
+    - 'helmfile'
+    - 'jq'
+    - 'k3d'
+    - 'k9s'
+    - 'krew'
+    - 'kubelogin'
+    - 'kubernetes-cli'
+    - 'kubectx'
+    - 'kustomize'
+    - 'nvm'
+    - 'pinentry'
+    - 'pre-commit'
+    - 'terragrunt'
+    - 'yq'
+    personal:
+    - 'age'
+    - 'sops'
+    - 'talhelper'
+    - 'talosctl'
   casks:
-  - 'devpod'
-  - 'font-meslo-lg-nerd-font'
-  - 'fork'
-  - 'google-chrome'
-  - 'obsidian'
-  - 'tailscale'
-  - 'visual-studio-code'
-  - 'yubico-authenticator'
-  - 'yubico-yubikey-manager'
+    work:
+    - 'devpod'
+    - 'font-meslo-lg-nerd-font'
+    - 'fork'
+    - 'google-chrome'
+    - 'visual-studio-code'
+    personal:
+    - 'obsidian'
+    - 'tailscale'
+    - 'yubico-authenticator'
+    - 'yubico-yubikey-manager'

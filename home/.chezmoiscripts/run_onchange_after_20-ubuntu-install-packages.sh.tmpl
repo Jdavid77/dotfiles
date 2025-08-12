@@ -4,8 +4,18 @@ brew bundle --file=/dev/stdin <<EOF
 {{ range .packages.taps -}}
 tap {{ . | quote }}
 {{ end -}}
-{{ range .packages.brews -}}
+{{ range concat .packages.brews.work .packages.brews.personal -}}
 brew {{ . | quote }}
 {{ end -}}
 EOF
+
+# Install snap packages (if GUI)
+{{ if .hasGUI -}}
+{{ range .packages.snaps.vanilla -}}
+sudo snap install {{ . | quote }}
+{{ end -}}
+{{ range .packages.snaps.classic -}}
+sudo snap install --classic {{ . | quote }}
+{{ end -}}
+{{ end -}}
 {{ end -}}
