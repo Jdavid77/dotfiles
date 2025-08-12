@@ -5,6 +5,19 @@ A comprehensive and portable [chezmoi](https://www.chezmoi.io/) dotfiles setup f
 
 ---
 
+## 🖥️ Compatible Operating Systems
+
+Currently only supports:
+
+- macOS
+- Ubuntu Desktop
+- DevContainers ( mainly Devpod )
+
+Will add more in the future if needed.
+
+
+---
+
 ## ✨ Inspired By
 
 Credit and inspiration from these dotfiles repositories:

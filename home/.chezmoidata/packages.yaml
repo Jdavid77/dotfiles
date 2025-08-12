@@ -13,6 +13,7 @@ packages:
     - spotify
     - discord
     - tailscale
+    - chromium
     classic:
     - code
   brews:
@@ -57,3 +58,5 @@ packages:
     - 'tailscale'
     - 'yubico-authenticator'
     - 'yubico-yubikey-manager'
+    - 'capcut'
+    - 'balenaetcher'
