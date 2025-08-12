@@ -17,9 +17,11 @@ packages:
     - steam
     - easy-disk-cleaner
     - nordvpn
+    - rpi-imager
     classic:
     - code
     - alacritty
+    - obsidian
   brews:
     work:
     - 'azure-cli'
@@ -66,3 +68,4 @@ packages:
     - 'capcut'
     - 'balenaetcher'
     - 'nordvpn'
+    - 'raspberry-pi-imager'
