@@ -5,6 +5,12 @@ packages:
   - curl
   - file
   - git
+  pacman:
+  - base-devel
+  - procps-ng
+  - curl
+  - file
+  - git
   taps:
   - fluxcd/tap
   - hashicorp/tap

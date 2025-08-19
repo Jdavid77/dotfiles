@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-{{ if and (not .devcontainer) (eq .osid "linux-ubuntu") -}}
+{{ if and (not .devcontainer) (eq .chezmoi.os "linux") -}}
 brew bundle --file=/dev/stdin <<EOF
 {{ range .packages.taps -}}
 tap {{ . | quote }}
@@ -10,7 +10,7 @@ brew {{ . | quote }}
 EOF
 
 # Install snap packages (if GUI)
-{{ if .hasGUI -}}
+{{ if and (eq .osid "linux-ubuntu") ( .hasGUI ) -}}
 {{ range .packages.snaps.vanilla -}}
 sudo snap install {{ . | quote }}
 {{ end -}}

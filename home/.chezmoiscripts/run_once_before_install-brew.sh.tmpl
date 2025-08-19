@@ -22,6 +22,20 @@ fi
      apt upgrade -y
      apt install -qq -y {{ range .packages.apt }}{{ . }} {{ end }}
   fi
+
+{{ end -}}
+
+{{ if eq .osid "linux-arch" -}}
+
+  if command -v "sudo" > /dev/null; then
+     sudo pacman -Syu --noconfirm
+     sudo pacman -S --needed --noconfirm {{ range .packages.pacman }}{{ . }} {{ end }}
+  else
+     pacman -Syu --noconfirm
+     pacman -S --needed --noconfirm {{ range .packages.pacman }}{{ . }} {{ end }}
+  fi
+
+  
 {{ end -}}
 
 if which -s brew; then
