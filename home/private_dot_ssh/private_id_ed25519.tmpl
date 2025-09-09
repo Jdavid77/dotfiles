@@ -1,3 +1,3 @@
-{{ if and (not $devcontainer) (not $isWorkComputer) -}}
+{{ if and (not .devcontainer) (not .isWorkComputer) -}}
 {{ secret "get-secret-value" "--name" "/personal/ssh-key" | b64dec }}
 {{ end -}}
