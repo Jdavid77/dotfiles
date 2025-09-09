@@ -60,13 +60,13 @@ packages:
     - 'talosctl'
   casks:
     work:
-    - 'devpod'
     - 'font-meslo-lg-nerd-font'
     - 'fork'
     - 'google-chrome'
     - 'visual-studio-code'
-    - 'alacritty'
     personal:
+    - 'devpod'
+    - 'alacritty'
     - 'obsidian'
     - 'tailscale'
     - 'yubico-authenticator'
