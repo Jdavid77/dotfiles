@@ -75,5 +75,3 @@ To initialize your dotfiles on a new system:
 ```bash
 sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply https://github.com/Jdavid77/dotfiles-demo.git
 ```
-
-
