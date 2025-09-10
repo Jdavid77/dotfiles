@@ -1,16 +1,24 @@
 [user]
 	name = {{ .name }}
 	email = {{ .email }}
+{{- if not .isWorkComputer }}
 	signingkey = ~/.ssh/id_ed25519.pub
+{{- else }}
+	signingkey = ~/.ssh/id_rsa.pub
+{{- end }}
 [gpg]
-  format = ssh
+	format = ssh
 [pull]
-  rebase = true
+	rebase = true
 [init]
-  defaultBranch = main
+{{- if not .isWorkComputer }}
+	defaultBranch = main
+{{- else }}
+	defaultBranch = master
+{{- end }}
 [push]
-  autoSetupRemote = true
+	autoSetupRemote = true
 [commit]
-  gpgSign = true
+	gpgSign = true
 [core]
-  editor = nvim
+	editor = nvim
