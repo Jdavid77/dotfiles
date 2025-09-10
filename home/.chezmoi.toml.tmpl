@@ -20,7 +20,13 @@
 {{- end -}}
 
 {{- $name := "Jdavid77" -}}
+{{- if $isWorkComputer -}}
+{{-   $name = promptStringOnce . "name" "Enter your name for work computer" -}}
+{{- end -}}
 {{- $email := "johnynobrega17@gmail.com" -}}
+{{- if $isWorkComputer -}}
+{{-   $email = promptStringOnce . "email" "Enter your email for work computer" -}}
+{{- end -}}
 
 [data]
   email = {{ $email | quote }}
@@ -32,3 +38,4 @@
 
 [secret]
   command = "akeyless"
+
