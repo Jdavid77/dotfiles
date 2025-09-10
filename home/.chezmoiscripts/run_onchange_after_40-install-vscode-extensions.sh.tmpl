@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+{{ if not .devcontainer -}}
+
+if command -v code &> /dev/null; then
+
+    {{ range .code.extensions -}}
+    code --install-extension {{ . | quote }} --force
+    {{ end -}}
+
+fi
+
+{{ end -}}

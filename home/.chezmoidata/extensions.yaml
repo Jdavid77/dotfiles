@@ -1,0 +1,16 @@
+code:
+  extensions:
+  - 4ops.terraform
+  - davidanson.vscode-markdownlint
+  - donjayamanne.githistory
+  - github.copilot
+  - github.copilot-chat
+  - hashicorp.terraform
+  - juliencroain.markdown-viewer
+  - ms-kubernetes-tools.vscode-kubernetes-tools
+  - ms-vscode.powershell
+  - redhat.vscode-yaml
+  - vscode-icons-team.vscode-icons
+  - ms-azure-devops.azure-pipelines
+  - ms-azuretools.vscode-azureresourcegroups
+  - cake-build.cake-vscode
