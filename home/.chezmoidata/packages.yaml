@@ -64,6 +64,7 @@ packages:
     - 'fork'
     - 'google-chrome'
     - 'visual-studio-code'
+    - 'lens'
     personal:
     - 'devpod'
     - 'alacritty'
