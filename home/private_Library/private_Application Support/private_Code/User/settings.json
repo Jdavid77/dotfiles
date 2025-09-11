@@ -1,0 +1,20 @@
+{
+    "files.autoSave": "onFocusChange",
+    "git.confirmSync": false,
+    "git.autofetch": true,
+    "editor.formatOnSave": true,
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": "active",
+    "editor.guides.highlightActiveBracketPair": true,
+    "extensions.autoCheckUpdates": true,
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "files.trimTrailingWhitespace": true,
+    "files.trimFinalNewlines": true,
+    "git.replaceTagsWhenPull": true,
+    "update.mode": "default",
+    "vs-kubernetes": {
+        "vs-kubernetes.crd-code-completion": "disabled"
+    },
+    "workbench.colorTheme": "Tomorrow Night Blue"
+}
