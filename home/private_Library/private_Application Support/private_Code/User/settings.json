@@ -3,6 +3,8 @@
     "git.confirmSync": false,
     "git.autofetch": true,
     "editor.formatOnSave": true,
+    "editor.fontSize": 14,
+    "editor.detectIndentation": true,
     "editor.bracketPairColorization.enabled": true,
     "editor.guides.bracketPairs": "active",
     "editor.guides.highlightActiveBracketPair": true,
@@ -16,5 +18,16 @@
     "vs-kubernetes": {
         "vs-kubernetes.crd-code-completion": "disabled"
     },
-    "workbench.colorTheme": "Tomorrow Night Blue"
+    "workbench.colorTheme": "Tomorrow Night Blue",
+    "workbench.iconTheme": "material-icon-theme",
+    "terminal.integrated.fontSize": 15,
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/dist": true,
+        "**/coverage": true
+    },
+    "files.watcherExclude": {
+        "**/node_modules/**": true,
+        "**/dist/**": true
+    }
 }
