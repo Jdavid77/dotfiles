@@ -53,6 +53,8 @@ packages:
     - 'pre-commit'
     - 'terragrunt'
     - 'yq'
+    - 'trivy'
+    - 'yamlfmt'
     personal:
     - 'age'
     - 'sops'
