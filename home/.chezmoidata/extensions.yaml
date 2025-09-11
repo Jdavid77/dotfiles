@@ -16,3 +16,4 @@ code:
   - cake-build.cake-vscode
   - vscodevim.vim
   - github.vscode-pull-request-github
+  - ms-vscode-remote.remote-ssh
