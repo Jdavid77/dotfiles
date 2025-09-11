@@ -14,3 +14,5 @@ code:
   - ms-azure-devops.azure-pipelines
   - ms-azuretools.vscode-azureresourcegroups
   - cake-build.cake-vscode
+  - vscodevim.vim
+  - github.vscode-pull-request-github

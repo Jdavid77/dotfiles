@@ -65,6 +65,7 @@ packages:
     - 'google-chrome'
     - 'visual-studio-code'
     - 'lens'
+    - 'iterm2'
     personal:
     - 'devpod'
     - 'alacritty'
