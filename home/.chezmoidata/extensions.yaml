@@ -18,3 +18,4 @@ code:
   - github.vscode-pull-request-github
   - ms-vscode-remote.remote-ssh
   - esbenp.prettier-vscode
+  - pkief.material-icon-theme
