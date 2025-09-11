@@ -55,6 +55,7 @@ packages:
     - 'yq'
     - 'trivy'
     - 'yamlfmt'
+    - 'tmux'
     personal:
     - 'age'
     - 'sops'
