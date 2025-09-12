@@ -5,17 +5,17 @@ brew bundle --file=/dev/stdin <<EOF
 tap {{ . | quote }}
 {{ end -}}
 {{ if .isWorkComputer -}}
-{{ range .packages.brews.work -}}
+{{ range concat .packages.brews.common .packages.brews.work -}}
 brew {{ . | quote }}
 {{ end -}}
-{{ range .packages.casks.work -}}
+{{ range concat .packages.casks.common .packages.casks.work -}}
 cask {{ . | quote }}
 {{ end -}}
 {{ else -}}
-{{ range concat .packages.brews.work .packages.brews.personal -}}
+{{ range concat .packages.brews.common .packages.brews.personal -}}
 brew {{ . | quote }}
 {{ end -}}
-{{ range concat .packages.casks.work .packages.casks.personal -}}
+{{ range concat .packages.casks.common .packages.casks.personal -}}
 cask {{ . | quote }}
 {{ end -}}
 {{ end -}}

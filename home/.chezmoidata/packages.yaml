@@ -30,11 +30,8 @@ packages:
     - alacritty
     - obsidian
   brews:
-    work:
-    - 'azure-cli'
-    - 'cmctl'
+    common:
     - 'docker'
-    - 'fluxcd/tap/flux'
     - 'ghorg'
     - 'git'
     - 'go'
@@ -45,29 +42,36 @@ packages:
     - 'k3d'
     - 'k9s'
     - 'krew'
-    - 'Azure/kubelogin/kubelogin'
     - 'kubernetes-cli'
     - 'kubectx'
     - 'kustomize'
     - 'nvm'
     - 'pinentry'
     - 'pre-commit'
-    - 'terragrunt'
     - 'yq'
     - 'trivy'
     - 'yamlfmt'
     - 'tmux'
+    - 'tree'
+    work:
+    - 'azure-cli'
+    - 'Azure/kubelogin/kubelogin'
+    - 'terragrunt'
+    - 'nuget'
     personal:
     - 'age'
     - 'sops'
     - 'talhelper'
     - 'talosctl'
+    - 'cmctl'
+    - 'fluxcd/tap/flux'
   casks:
-    work:
+    common:
     - 'font-meslo-lg-nerd-font'
     - 'fork'
     - 'google-chrome'
     - 'visual-studio-code'
+    work:
     - 'lens'
     - 'iterm2'
     personal:

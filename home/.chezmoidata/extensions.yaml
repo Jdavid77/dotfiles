@@ -19,3 +19,4 @@ code:
   - ms-vscode-remote.remote-ssh
   - esbenp.prettier-vscode
   - pkief.material-icon-theme
+  - vivaxy.vscode-conventional-commits
