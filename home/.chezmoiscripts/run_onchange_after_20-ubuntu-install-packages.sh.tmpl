@@ -4,7 +4,7 @@ brew bundle --file=/dev/stdin <<EOF
 {{ range .packages.taps -}}
 tap {{ . | quote }}
 {{ end -}}
-{{ range concat .packages.brews.work .packages.brews.personal -}}
+{{ range concat .packages.brews.common .packages.brews.personal -}}
 brew {{ . | quote }}
 {{ end -}}
 EOF
