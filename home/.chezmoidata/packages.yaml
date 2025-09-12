@@ -53,6 +53,7 @@ packages:
     - 'yamlfmt'
     - 'tmux'
     - 'tree'
+    - 'watch'
     work:
     - 'azure-cli'
     - 'Azure/kubelogin/kubelogin'

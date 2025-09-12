@@ -1,6 +1,3 @@
-# watch events on selected resources
-# requires linux "watch" command
-# change '-n' to adjust refresh time in seconds
 plugins:
   watch-events:
     shortCut: Shift-E

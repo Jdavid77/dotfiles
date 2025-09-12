@@ -1,7 +1,4 @@
-# $HOME/.k9s/plugin.yml
-# move selected line to chosen resource in K9s, then:
-# Shift-T (with confirmation) to toggle helm releases or kustomizations suspend and resume
-# Shift-R (no confirmation) to reconcile a git source or a helm release or a kustomization
+{{- if not .isWorkComputer }}
 plugins:
   toggle-helmrelease:
     shortCut: Shift-T
@@ -205,3 +202,4 @@ plugins:
         kustomizations.kustomize.toolkit.fluxcd.io -o json
         | jq -r '.items[] | select(.spec.suspend==true) | [.metadata.name,.spec.suspend] | @tsv'
         | less -K
+{{- end }}

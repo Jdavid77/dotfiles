@@ -1,4 +1,3 @@
-# View user-supplied values when the helm chart was created
 plugins:
   helm-values:
     shortCut: v
