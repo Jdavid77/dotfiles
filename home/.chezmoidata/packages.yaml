@@ -27,7 +27,7 @@ packages:
     - rpi-imager
     classic:
     - code
-    - alacritty
+    - ghostty
     - obsidian
   brews:
     common:
@@ -72,12 +72,11 @@ packages:
     - 'fork'
     - 'google-chrome'
     - 'visual-studio-code'
+    - 'ghostty'
     work:
     - 'lens'
-    - 'iterm2'
     personal:
     - 'devpod'
-    - 'alacritty'
     - 'obsidian'
     - 'tailscale'
     - 'yubico-authenticator'
