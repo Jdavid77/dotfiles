@@ -54,6 +54,7 @@ packages:
     - 'tmux'
     - 'tree'
     - 'watch'
+    - 'eza'
     work:
     - 'azure-cli'
     - 'Azure/kubelogin/kubelogin'
@@ -73,11 +74,12 @@ packages:
     - 'google-chrome'
     - 'visual-studio-code'
     - 'ghostty'
+    - 'obsidian'
+    - 'stats'
     work:
     - 'lens'
     personal:
     - 'devpod'
-    - 'obsidian'
     - 'tailscale'
     - 'yubico-authenticator'
     - 'yubico-yubikey-manager'
