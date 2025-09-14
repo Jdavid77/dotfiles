@@ -76,6 +76,8 @@ packages:
     - 'ghostty'
     - 'obsidian'
     - 'stats'
+    - 'flux-app'
+    - 'docker-desktop'
     work:
     - 'lens'
     personal:
