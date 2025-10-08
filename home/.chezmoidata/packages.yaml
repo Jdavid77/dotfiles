@@ -54,7 +54,6 @@ packages:
     - 'tmux'
     - 'tree'
     - 'watch'
-    - 'eza'
     - 'hadolint'
     work:
     - 'azure-cli'
