@@ -1,0 +1,13 @@
+plugins:
+  browse-pvc:
+    shortCut: Shift-B
+    description: Browse PVC
+    dangerous: false
+    scopes:
+      - pvc
+    command: bash
+    background: false
+    confirm: false
+    args:
+      - -c
+      - "kubectl browse-pvc $COL-NAME -n $COL-NAMESPACE --context $CONTEXT"
