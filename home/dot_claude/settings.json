@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "deny": [
+      "Read(**/.env*)",
+      "Read(**/*.pem)",
+      "Read(**/*.key)",
+      "Read(**/*.p12)",
+      "Read(**/*.pfx)",
+      "Read(**/secrets/**)",
+      "Read(**/credentials/**)",
+      "Read(**/.aws/**)",
+      "Read(**/.ssh/**)",
+      "Read(**/docker-compose*.yml)",
+      "Read(**/.docker/**)",
+      "Read(**/config/database.yml)",
+      "Read(**/*.keystore)",
+      "Read(**/*.jks)",
+      "Read(**/id_rsa*)",
+      "Read(**/id_ed25519*)",
+      "Read(**/.kube/**)",
+      "Read(**/serviceaccount*.json)",
+      "Read(**/*secret*.json)",
+      "Read(**/*credentials*.json)"
+    ]
+  },
+  "alwaysThinkingEnabled": true,
+  "cleanupPeriodDays": 7
+}
