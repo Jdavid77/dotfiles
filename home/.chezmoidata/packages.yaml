@@ -13,7 +13,6 @@ packages:
   - git
   taps:
   - fluxcd/tap
-  - hashicorp/tap
   - azure/kubelogin
   snaps:
     vanilla:
@@ -35,7 +34,6 @@ packages:
     - 'ghorg'
     - 'git'
     - 'go'
-    - 'hashicorp/tap/terraform'
     - 'helm'
     - 'helmfile'
     - 'jq'
@@ -55,10 +53,10 @@ packages:
     - 'tree'
     - 'watch'
     - 'hadolint'
+    - 'tenv'
     work:
     - 'azure-cli'
     - 'Azure/kubelogin/kubelogin'
-    - 'terragrunt'
     - 'nuget'
     personal:
     - 'age'
