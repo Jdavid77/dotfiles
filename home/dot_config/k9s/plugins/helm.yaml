@@ -10,3 +10,20 @@ plugins:
     args:
       - -c
       - "helm get values $COL-NAME -n $NAMESPACE --kube-context $CONTEXT | less -K"
+  helm-rollback:
+    shortCut: Shift-R
+    confirm: true
+    description: Rollback
+    scopes:
+      - helm
+    command: sh
+    background: false
+    args:
+      - -c
+      - >-
+        LATEST_REVISION=$(helm history $NAME -n $NAMESPACE | grep deployed | awk '{print $1}');
+        if [ -z "$LATEST_REVISION" ]; then
+          echo "Error: No deployed revision found for $NAME";
+          exit 1;
+        fi;
+        helm rollback $NAME $LATEST_REVISION -n $NAMESPACE --kube-context $CONTEXT | less -K
