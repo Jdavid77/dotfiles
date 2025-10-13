@@ -18,7 +18,7 @@
     "vs-kubernetes": {
         "vs-kubernetes.crd-code-completion": "disabled"
     },
-    "workbench.colorTheme": "Tomorrow Night Blue",
+    "workbench.colorTheme": "Winter is Coming (Dark Blue)",
     "workbench.iconTheme": "material-icon-theme",
     "terminal.integrated.fontSize": 15,
     "search.exclude": {
@@ -29,5 +29,15 @@
     "files.watcherExclude": {
         "**/node_modules/**": true,
         "**/dist/**": true
-    }
+    },
+    "[dockercompose]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.autoIndent": "advanced",
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "[github-actions-workflow]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "git.suggestSmartCommit": false
 }
