@@ -14,6 +14,7 @@ packages:
   taps:
   - fluxcd/tap
   - azure/kubelogin
+  - cloudflare/cloudflare
   snaps:
     vanilla:
     - spotify
@@ -54,6 +55,8 @@ packages:
     - 'watch'
     - 'hadolint'
     - 'tenv'
+    - 'kor'
+    - 'cloudflare/cloudflare/cf-terraforming'
     work:
     - 'azure-cli'
     - 'Azure/kubelogin/kubelogin'
