@@ -57,6 +57,7 @@ packages:
     - 'tenv'
     - 'kor'
     - 'cloudflare/cloudflare/cf-terraforming'
+    - 'zoxide'
     work:
     - 'azure-cli'
     - 'Azure/kubelogin/kubelogin'
