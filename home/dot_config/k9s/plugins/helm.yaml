@@ -27,3 +27,15 @@ plugins:
           exit 1;
         fi;
         helm rollback $NAME $LATEST_REVISION -n $NAMESPACE --kube-context $CONTEXT | less -K
+  helm-uninstall:
+    shortCut: u
+    confirm: true
+    dangerous: true
+    description: Uninstall
+    scopes:
+      - helm
+    command: sh
+    background: false
+    args:
+      - -c
+      - helm uninstall $NAME -n $NAMESPACE --kube-context $CONTEXT | less -K
