@@ -1,0 +1,16 @@
+plugins:
+  neat:
+    shortCut: Shift-D
+    confirm: false
+    dangerous: false
+    description: Neat
+    scopes:
+    - pod
+    - deployment
+    - statefulset
+    - daemonset
+    command: sh
+    background: false
+    args:
+    - -c
+    - "kubectl neat get -- $RESOURCE_NAME $COL-NAME -n $COL-NAMESPACE --context $CONTEXT | less -K"
