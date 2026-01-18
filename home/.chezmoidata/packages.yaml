@@ -5,12 +5,6 @@ packages:
   - curl
   - file
   - git
-  pacman:
-  - base-devel
-  - procps-ng
-  - curl
-  - file
-  - git
   taps:
   - fluxcd/tap
   - azure/kubelogin
@@ -23,7 +17,6 @@ packages:
     - chromium
     - steam
     - easy-disk-cleaner
-    - nordvpn
     - rpi-imager
     classic:
     - code
@@ -38,13 +31,11 @@ packages:
     - 'helm'
     - 'helmfile'
     - 'jq'
-    - 'k3d'
     - 'k9s'
     - 'krew'
     - 'kubernetes-cli'
     - 'kubectx'
     - 'kustomize'
-    - 'nvm'
     - 'pinentry'
     - 'pre-commit'
     - 'yq'
@@ -53,10 +44,8 @@ packages:
     - 'tmux'
     - 'tree'
     - 'watch'
-    - 'hadolint'
     - 'tenv'
     - 'kor'
-    - 'cloudflare/cloudflare/cf-terraforming'
     - 'zoxide'
     work:
     - 'azure-cli'
@@ -67,7 +56,6 @@ packages:
     - 'sops'
     - 'talhelper'
     - 'talosctl'
-    - 'cmctl'
     - 'fluxcd/tap/flux'
   casks:
     common:
@@ -77,17 +65,15 @@ packages:
     - 'visual-studio-code'
     - 'ghostty'
     - 'obsidian'
-    - 'stats'
-    - 'flux-app'
+    - 'flux-app' # red light screen
     - 'docker-desktop'
+    - 'devpod'
     work:
     - 'lens'
     personal:
-    - 'devpod'
     - 'tailscale'
     - 'yubico-authenticator'
     - 'yubico-yubikey-manager'
     - 'capcut'
     - 'balenaetcher'
-    - 'nordvpn'
     - 'raspberry-pi-imager'

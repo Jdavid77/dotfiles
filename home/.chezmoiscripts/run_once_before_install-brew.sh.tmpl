@@ -25,19 +25,6 @@ fi
 
 {{ end -}}
 
-{{ if eq .osid "linux-arch" -}}
-
-  if command -v "sudo" > /dev/null; then
-     sudo pacman -Syu --noconfirm
-     sudo pacman -S --needed --noconfirm {{ range .packages.pacman }}{{ . }} {{ end }}
-  else
-     pacman -Syu --noconfirm
-     pacman -S --needed --noconfirm {{ range .packages.pacman }}{{ . }} {{ end }}
-  fi
-
-  
-{{ end -}}
-
 if which -s brew; then
     echo 'Homebrew is already installed'
 else

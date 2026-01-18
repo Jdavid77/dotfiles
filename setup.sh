@@ -4,9 +4,6 @@
 
 set -euo pipefail
 
-# allacrity info
-curl -sSL https://raw.githubusercontent.com/alacritty/alacritty/master/extra/alacritty.info | tic -x -
-
 if command -v zsh >/dev/null; then
   sudo chsh -s $(command -v zsh) $USER
 fi
