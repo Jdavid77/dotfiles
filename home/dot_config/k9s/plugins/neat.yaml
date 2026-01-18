@@ -9,6 +9,7 @@ plugins:
     - deployment
     - statefulset
     - daemonset
+    - ingress
     command: sh
     background: false
     args:

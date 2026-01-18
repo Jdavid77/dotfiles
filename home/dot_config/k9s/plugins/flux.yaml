@@ -1,4 +1,3 @@
-{{- if not .isWorkComputer }}
 plugins:
   toggle-helmrelease:
     shortCut: Shift-T
@@ -202,4 +201,3 @@ plugins:
         kustomizations.kustomize.toolkit.fluxcd.io -o json
         | jq -r '.items[] | select(.spec.suspend==true) | [.metadata.name,.spec.suspend] | @tsv'
         | less -K
-{{- end }}
