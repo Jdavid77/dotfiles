@@ -1,3 +1,5 @@
+{{ if not .devcontainer -}}
+
 [user]
 	name = {{ .name }}
 	email = {{ .email }}
@@ -22,3 +24,5 @@
 	gpgSign = true
 [core]
 	editor = nvim
+
+{{ end -}}
