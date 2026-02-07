@@ -1,0 +1,11 @@
+views:
+  gateway.networking.k8s.io/v1/httproutes:
+    sortColumn: GATEWAY:asc
+    columns:
+      - NAME
+      - HOSTNAMES:.spec.hostnames
+      - GATEWAY:.spec.parentRefs[*].name
+      - SERVICE:.spec.rules[*].backendRefs[*].name
+      - PORT:.spec.rules[*].backendRefs[*].port
+      - NAMESPACE|WR
+      - AGE
