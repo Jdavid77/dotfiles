@@ -10,6 +10,8 @@ plugins:
     - statefulset
     - daemonset
     - ingress
+    - persistentvolume
+    - persistentvolumeclaim
     command: sh
     background: false
     args:

@@ -66,12 +66,12 @@ zinit ice wait'0'; zinit light zsh-users/zsh-syntax-highlighting
 zinit ice wait'0'; zinit light zsh-users/zsh-autosuggestions
 zinit ice wait'1'; zinit light zsh-users/zsh-completions
 
+{{- if not .devcontainer -}}
 # Oh My Zsh plugin snippets
 # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/azure
 zinit snippet OMZP::azure
 # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/kubectl
 zinit snippet OMZP::kubectl
-{{- if not .isWorkComputer }}
 zinit snippet OMZP::fluxcd
 {{- end }}
 
@@ -100,6 +100,12 @@ alias sz='source ~/.zshrc'
 alias vim='nvim'
 alias kx='kubectx'
 alias bfix='brew cleanup ; brew doctor ; brew update ; brew upgrade'
+
+alias gs='git switch'
+alias gsc='git switch -c'
+alias gc='git commit'
+alias gcl='git clone'
+
 
 # Kubeconfig updater
 alias ukf="_updateKubeconfig"
