@@ -2,10 +2,11 @@ views:
   gateway.networking.k8s.io/v1/httproutes:
     sortColumn: GATEWAY:asc
     columns:
+      - NAMESPACE
       - NAME
-      - HOSTNAMES:.spec.hostnames
       - GATEWAY:.spec.parentRefs[*].name
+      - HOSTNAMES:.spec.hostnames
       - SERVICE:.spec.rules[*].backendRefs[*].name
       - PORT:.spec.rules[*].backendRefs[*].port
-      - NAMESPACE|WR
+      - STATUS:.status.parents[0].conditions[?(@.type=="Accepted")].reason
       - AGE
