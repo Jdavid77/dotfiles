@@ -8,5 +8,6 @@ views:
       - HOSTNAMES:.spec.hostnames
       - SERVICE:.spec.rules[*].backendRefs[*].name
       - PORT:.spec.rules[*].backendRefs[*].port
-      - STATUS:.status.parents[0].conditions[?(@.type=="Accepted")].reason
+      - ACCEPTED:.status.parents[0].conditions[?(@.type=="Accepted")].reason
+      - RESOLVED:.status.parents[0].conditions[?(@.type=="ResolvedRefs")].reason
       - AGE
