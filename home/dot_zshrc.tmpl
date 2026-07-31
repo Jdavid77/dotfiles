@@ -1,67 +1,39 @@
-########################################
-# .zshrc - Interactive shell configuration
-# Loaded: Only for interactive shells
-########################################
-
-########################################
-# Instant Prompt (Powerlevel10k)
-########################################
+# Powerlevel10k instant prompt
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-########################################
-# Prompt Theme (Powerlevel10k)
-########################################
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
-########################################
-# Zsh Settings
-########################################
-# vi mode
+# Vi mode
 bindkey -v
 export KEYTIMEOUT=1
 
-# History settings
+# History
 HISTSIZE=10000
 HISTFILE=~/.zsh_history
 SAVEHIST=$HISTSIZE
 HISTDUP=erase
-setopt appendhistory
-setopt sharehistory
-setopt hist_ignore_space
-setopt hist_ignore_all_dups
-setopt hist_save_no_dups
-setopt hist_ignore_dups
-setopt hist_find_no_dups
+setopt appendhistory sharehistory hist_ignore_space hist_ignore_all_dups hist_save_no_dups hist_ignore_dups hist_find_no_dups
 
-# Completion config
+# Completion
 autoload -Uz compinit && compinit -C
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
 
-########################################
-# Zinit Plugin Manager & Plugins
-########################################
-# Zinit path setup
+# Zinit
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
-
-# Download if not present
 if [ ! -d "$ZINIT_HOME" ]; then
   mkdir -p "$(dirname $ZINIT_HOME)"
   git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 fi
-
-# Source Zinit
 source "${ZINIT_HOME}/zinit.zsh"
 
-# Load Powerlevel10k
 zinit ice depth=1
 zinit light romkatv/powerlevel10k
 
-# Zsh plugins
 zinit ice wait'0'; zinit light zsh-users/zsh-syntax-highlighting
 zinit ice wait'0'; zinit light zsh-users/zsh-autosuggestions
 zinit ice wait'1'; zinit light zsh-users/zsh-completions
@@ -72,13 +44,9 @@ zinit snippet OMZP::kubectl
 zinit snippet OMZP::fluxcd
 {{- end }}
 
-# Replay cd hooks (zinit housekeeping)
 zinit cdreplay -q
 
-########################################
-# Tool-specific Aliases & Settings
-########################################
-# bat (cat replacement)
+# Tool defaults
 if command -v bat > /dev/null; then
   alias cat="bat"
 fi
@@ -88,9 +56,7 @@ if command -v nvim > /dev/null; then
   export VISUAL="nvim"
 fi
 
-########################################
 # Aliases
-########################################
 alias ls='eza --icons=always --classify --group-directories-first --time-style=relative --color=always'
 alias c='clear'
 alias sz='source ~/.zshrc'
@@ -105,8 +71,6 @@ alias gc='git commit'
 alias gcl='git clone'
 alias gp='git push'
 
-
-# Kubeconfig updater
 alias ukf="_updateKubeconfig"
 _updateKubeconfig() {
   echo "Updating kubeconfig"
