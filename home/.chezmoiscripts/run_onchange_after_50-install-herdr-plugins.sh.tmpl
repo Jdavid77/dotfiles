@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+{{ if not .devcontainer -}}
+
+if command -v herdr &> /dev/null; then
+
+    {{ range .herdr.plugins -}}
+    herdr plugin list | grep -q {{ printf "github:%s@" . | quote }} || herdr plugin install {{ . | quote }} --yes
+    {{ end -}}
+
+fi
+
+{{ end -}}

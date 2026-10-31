@@ -42,6 +42,7 @@ packages:
     - 'trivy'
     - 'yamlfmt'
     - 'tmux'
+    - 'herdr'
     - 'tree'
     - 'watch'
     - 'tenv'
