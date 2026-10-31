@@ -1,5 +1,5 @@
 {{- $devcontainer := false -}}
-{{- if or (eq (env "DEVPOD") "true") (eq (env "REMOTE_CONTAINERS") "true") -}}
+{{- if or (eq (env "DEVCONTAINER") "true") (eq (env "DEVPOD") "true") (eq (env "REMOTE_CONTAINERS") "true") -}}
 {{-   $devcontainer = true -}}
 {{- end -}}
 
