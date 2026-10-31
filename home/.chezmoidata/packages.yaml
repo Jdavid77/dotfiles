@@ -10,6 +10,7 @@ packages:
   - azure/kubelogin
   - cloudflare/cloudflare
   - controlplaneio-fluxcd/tap
+  - devsy-org/tap
   snaps:
     vanilla:
     - spotify
@@ -44,6 +45,7 @@ packages:
     - 'cmctl'
     - 'kubeconform'
     - 'conftest'
+    - 'devsy-org/tap/devsy'
     - 'pre-commit'
     - 'yq'
     - 'trivy'
