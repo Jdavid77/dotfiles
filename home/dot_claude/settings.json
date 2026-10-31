@@ -1,7 +1,8 @@
 {
+  "cleanupPeriodDays": 7,
   "permissions": {
     "deny": [
-      "Read(**/.env*)",
+      "Read(**/.env)",
       "Read(**/*.pem)",
       "Read(**/*.key)",
       "Read(**/*.p12)",
@@ -10,7 +11,6 @@
       "Read(**/credentials/**)",
       "Read(**/.aws/**)",
       "Read(**/.ssh/**)",
-      "Read(**/docker-compose*.yml)",
       "Read(**/.docker/**)",
       "Read(**/config/database.yml)",
       "Read(**/*.keystore)",
@@ -23,6 +23,19 @@
       "Read(**/*credentials*.json)"
     ]
   },
+  "model": "opus",
+  "enabledPlugins": {
+    "blowfish@blowfish": true
+  },
+  "extraKnownMarketplaces": {
+    "blowfish": {
+      "source": {
+        "source": "github",
+        "repo": "nunocoracao/blowfish"
+      }
+    }
+  },
   "alwaysThinkingEnabled": true,
-  "cleanupPeriodDays": 7
+  "effortLevel": "medium",
+  "hooks": {"SessionStart":[{"matcher":"^(startup|resume|clear|compact|fork)$","hooks":[{"type":"command","command":"bash '/home/jnobrega/.claude/hooks/herdr-agent-state.sh' session","timeout":10}]}]}
 }
