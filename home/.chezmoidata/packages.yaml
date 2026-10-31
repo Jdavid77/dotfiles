@@ -9,6 +9,7 @@ packages:
   - fluxcd/tap
   - azure/kubelogin
   - cloudflare/cloudflare
+  - controlplaneio-fluxcd/tap
   snaps:
     vanilla:
     - spotify
@@ -24,8 +25,11 @@ packages:
     - obsidian
   brews:
     common:
+    - 'awscli'
     - 'docker'
-    - 'ghorg'
+    - 'crane'
+    - 'dive'
+    - 'hadolint'
     - 'git'
     - 'go'
     - 'helm'
@@ -36,28 +40,35 @@ packages:
     - 'kubernetes-cli'
     - 'kubectx'
     - 'kustomize'
-    - 'pinentry'
+    - 'kind'
+    - 'cmctl'
+    - 'kubeconform'
+    - 'conftest'
     - 'pre-commit'
     - 'yq'
     - 'trivy'
     - 'yamlfmt'
-    - 'tmux'
+    - 'yamllint'
+    - 'gh'
+    - 'go-task'
+    - 'uv'
     - 'herdr'
     - 'tree'
     - 'watch'
     - 'tenv'
-    - 'kor'
     - 'zoxide'
+    - 'bitwarden-cli'
+    - 'rtk'
     work:
     - 'azure-cli'
     - 'Azure/kubelogin/kubelogin'
-    - 'nuget'
     personal:
     - 'age'
     - 'sops'
-    - 'talhelper'
     - 'talosctl'
     - 'fluxcd/tap/flux'
+    - 'controlplaneio-fluxcd/tap/flux-operator'
+    - 'controlplaneio-fluxcd/tap/flux-operator-mcp'
   casks:
     common:
     - 'font-meslo-lg-nerd-font'
@@ -68,9 +79,6 @@ packages:
     - 'obsidian'
     - 'flux-app' # red light screen
     - 'docker-desktop'
-    - 'devpod'
-    work:
-    - 'lens'
     personal:
     - 'tailscale'
     - 'yubico-authenticator'
