@@ -1,0 +1,12 @@
+{{- if not .devcontainer -}}
+{{- $version := "2.1.0" -}}
+{{- $target := printf "%s-unknown-linux-musl" (eq .chezmoi.arch "amd64" | ternary "x86_64" "aarch64") -}}
+{{- if eq .chezmoi.os "darwin" -}}
+{{-   $target = "macos-universal" -}}
+{{- end -}}
+[".local/bin/bws"]
+type = "archive-file"
+url = "https://github.com/bitwarden/sdk-sm/releases/download/bws-v{{ $version }}/bws-{{ $target }}-{{ $version }}.zip"
+path = "bws"
+executable = true
+{{- end }}
