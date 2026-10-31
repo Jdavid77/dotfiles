@@ -9,3 +9,9 @@ show_agent_labels_on_pane_borders = true
 
 [experimental]
 pane_history = true
+
+[[keys.command]]
+key = "prefix+f"
+type = "plugin_action"
+command = "herdr-sidebar.open-sidebar"
+description = "toggle sidebar"
