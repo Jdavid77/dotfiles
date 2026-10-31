@@ -24,17 +24,6 @@
     ]
   },
   "model": "opus",
-  "enabledPlugins": {
-    "blowfish@blowfish": true
-  },
-  "extraKnownMarketplaces": {
-    "blowfish": {
-      "source": {
-        "source": "github",
-        "repo": "nunocoracao/blowfish"
-      }
-    }
-  },
   "alwaysThinkingEnabled": true,
   "effortLevel": "medium",
   "hooks": {"SessionStart":[{"matcher":"^(startup|resume|clear|compact|fork)$","hooks":[{"type":"command","command":"bash '/home/jnobrega/.claude/hooks/herdr-agent-state.sh' session","timeout":10}]}]}
