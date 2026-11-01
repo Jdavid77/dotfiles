@@ -9,3 +9,6 @@ aliases:
   http: gateway.networking.k8s.io/v1/httproutes
   tcp: gateway.networking.k8s.io/v1alpha2/tcproutes
   tls: gateway.networking.k8s.io/v1alpha2/tlsroutes
+  np: networking.k8s.io/v1/networkpolicies
+  cr: rbac.authorization.k8s.io/v1/clusterroles
+  crb: rbac.authorization.k8s.io/v1/clusterrolebindings
