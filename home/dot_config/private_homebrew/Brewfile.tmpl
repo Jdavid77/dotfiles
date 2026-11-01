@@ -10,7 +10,7 @@ brew "helmfile"
 brew "jq"
 brew "k9s"
 brew "krew"
-brew "brumhard/tap/krewfile"
+brew "brumhard/tap/krewfile", trusted: true
 brew "kubernetes-cli"
 brew "kubectx"
 brew "kustomize"
@@ -18,7 +18,7 @@ brew "kind"
 brew "cmctl"
 brew "kubeconform"
 brew "conftest"
-brew "devsy-org/tap/devsy"
+brew "devsy-org/tap/devsy", trusted: true
 brew "pre-commit"
 brew "yq"
 brew "trivy"
@@ -38,16 +38,16 @@ brew "rtk"
 
 # work
 brew "azure-cli"
-brew "Azure/kubelogin/kubelogin"
+brew "Azure/kubelogin/kubelogin", trusted: true
 {{- else }}
 
 # personal
 brew "age"
 brew "sops"
 brew "talosctl"
-brew "fluxcd/tap/flux"
-brew "controlplaneio-fluxcd/tap/flux-operator"
-brew "controlplaneio-fluxcd/tap/flux-operator-mcp"
+brew "fluxcd/tap/flux", trusted: true
+brew "controlplaneio-fluxcd/tap/flux-operator", trusted: true
+brew "controlplaneio-fluxcd/tap/flux-operator-mcp", trusted: true
 {{- end }}
 
 if OS.mac?
