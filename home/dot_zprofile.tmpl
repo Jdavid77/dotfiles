@@ -7,8 +7,3 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 {{ end -}}
 {{ end -}}
-
-# mise
-if command -v mise > /dev/null; then
-  eval "$($HOME/.local/bin/mise activate zsh)"
-fi

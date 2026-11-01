@@ -46,6 +46,11 @@ zinit snippet OMZP::fluxcd
 
 zinit cdreplay -q
 
+# mise
+if command -v mise > /dev/null; then
+  eval "$($HOME/.local/bin/mise activate zsh)"
+fi
+
 # Tool defaults
 if command -v bat > /dev/null; then
   alias cat="bat"
