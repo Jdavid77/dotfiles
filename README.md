@@ -11,7 +11,7 @@ Currently only supports:
 
 - macOS
 - Ubuntu Desktop
-- DevContainers ( mainly Devpod )
+- DevContainers
 
 Will add more in the future if needed.
 
@@ -35,36 +35,24 @@ Credit and inspiration from these dotfiles repositories:
 
 ### 🔧 Pre-requisites
 
-* [Akeyless CLI](https://docs.akeyless.io/docs/cli)
-
-Install Akeyless CLI (if not already installed):
-
-```bash
-curl -o akeyless https://akeyless-cli.s3.us-east-2.amazonaws.com/cli/latest/production/cli-linux-amd64
-chmod +x akeyless
-./akeyless
-```
+* [Bitwarden CLI](https://bitwarden.com/help/cli/) (`bw`)
 
 ---
 
-### 🔐 Setup Akeyless
+### 🔐 Setup Bitwarden
 
-To configure Akeyless for secret retrieval:
+Secrets are read from these vault items:
 
-```bash
-akeyless configure \
-    --profile default \
-    --access-id <access-id> \
-    --access-key <access-key> 
-```
+* `SOPS` (secure note) - age key for SOPS, in the notes field
+* `Main` (SSH key) - SSH private key
 
-Once configured, the CLI will save your profile in:
+Log in with your personal API key and unlock the vault before applying:
 
 ```bash
-~/.akeyless/profiles/default.yaml
+bw config server <server-url>
+bw login --apikey   # prompts for client_id / client_secret
+export BW_SESSION="$(bw unlock --raw)"
 ```
-
-P.S - Make sure to move your akeyless bin to `~/.akeyless/bin/`
 
 ---
 
