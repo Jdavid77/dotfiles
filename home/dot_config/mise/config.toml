@@ -5,6 +5,7 @@ chezmoi = "latest"
 node = "latest"
 "aqua:neovim/neovim" = "latest"
 eza = "latest"
+starship = "latest"
 
 [settings]
 idiomatic_version_file_enable_tools = ["python"]

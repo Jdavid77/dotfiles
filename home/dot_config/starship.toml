@@ -1,0 +1,131 @@
+"$schema" = "https://starship.rs/config-schema.json"
+
+# Two lines: info blocks on top with a fill between left and right, prompt char below.
+# Every block is a self-contained rounded pill, so optional blocks never break the chain.
+format = """
+$os$username$hostname$directory$git_branch$git_state$git_status\
+$fill\
+$status$cmd_duration$jobs$golang$python$nodejs$kubernetes$aws$azure$terraform$time
+$character"""
+
+palette = "coolnight"
+
+# Colors from the Ghostty coolnight theme
+[palettes.coolnight]
+navy = "#214969"
+light = "#CBE0F0"
+dark = "#011423"
+sky = "#0FC5ED"
+violet = "#a277ff"
+crimson = "#E52E2E"
+amber = "#FFE073"
+mint = "#44FFB1"
+aqua = "#24EAF7"
+
+[fill]
+symbol = "─"
+style = "fg:navy"
+
+# ── Left ─────────────────────────────────────────────────────────────
+
+[os]
+disabled = false
+format = "[](fg:navy)[ $symbol](bg:navy fg:light)[](fg:navy) "
+
+[os.symbols]
+Ubuntu = " "
+Macos = " "
+Linux = " "
+
+# user@host as one pill, only over SSH
+[username]
+detect_env_vars = ["SSH_CONNECTION"]
+format = "[](fg:navy)[ $user](bg:navy fg:light)"
+
+[hostname]
+ssh_only = true
+ssh_symbol = ""
+format = "[@$hostname ](bg:navy fg:light)[](fg:navy) "
+
+[directory]
+truncation_length = 3
+truncate_to_repo = true
+read_only = " "
+format = "[](fg:sky)[ $path$read_only ](bg:sky fg:dark)[](fg:sky) "
+
+# branch, state and status share one pill
+[git_branch]
+format = "[](fg:violet)[ $symbol$branch ](bg:violet fg:dark)"
+
+[git_state]
+format = "[\\($state( $progress_current/$progress_total)\\) ](bg:violet fg:dark)"
+
+[git_status]
+format = "[($all_status$ahead_behind )](bg:violet fg:dark)[](fg:violet) "
+conflicted = "=${count}"
+stashed = "\\$${count}"
+deleted = "✘${count}"
+renamed = "»${count}"
+modified = "!${count}"
+staged = "+${count}"
+untracked = "?${count}"
+ahead = "⇡${count}"
+behind = "⇣${count}"
+diverged = "⇡${ahead_count}⇣${behind_count}"
+
+# ── Right ────────────────────────────────────────────────────────────
+
+[status]
+disabled = false
+symbol = "✘ "
+format = "[](fg:crimson)[ $symbol$status( $signal_name) ](bg:crimson fg:light)[](fg:crimson) "
+
+[cmd_duration]
+min_time = 3_000
+format = "[](fg:amber)[  $duration ](bg:amber fg:dark)[](fg:amber) "
+
+[jobs]
+symbol = "✦"
+format = "[](fg:amber)[ $symbol$number ](bg:amber fg:dark)[](fg:amber) "
+
+[golang]
+format = "[](fg:navy)[ $symbol$version ](bg:navy fg:aqua)[](fg:navy) "
+
+[python]
+format = "[](fg:navy)[ $symbol$version( \\($virtualenv\\)) ](bg:navy fg:aqua)[](fg:navy) "
+
+[nodejs]
+format = "[](fg:navy)[ $symbol$version ](bg:navy fg:aqua)[](fg:navy) "
+
+# Always shown; production contexts turn red
+[kubernetes]
+disabled = false
+symbol = "☸ "
+style = "fg:mint"
+format = "[]($style)[ $symbol$context( \\($namespace\\)) ]($style inverted)[]($style) "
+
+[[kubernetes.contexts]]
+context_pattern = ".*(prod|prd).*"
+style = "fg:crimson"
+symbol = "⚠ ☸ "
+
+[aws]
+format = "[](fg:navy)[ $symbol($profile )(\\($region\\) )](bg:navy fg:aqua)[](fg:navy) "
+
+[azure]
+disabled = false
+format = "[](fg:navy)[ $symbol$subscription ](bg:navy fg:aqua)[](fg:navy) "
+
+[terraform]
+format = "[](fg:navy)[ $symbol$workspace ](bg:navy fg:aqua)[](fg:navy) "
+
+[time]
+disabled = false
+format = "[](fg:navy)[ $time ](bg:navy fg:light)[](fg:navy)"
+
+# ── Prompt ───────────────────────────────────────────────────────────
+
+[character]
+success_symbol = "[❯](bold mint)"
+error_symbol = "[❯](bold crimson)"
+vimcmd_symbol = "[❮](bold mint)"
