@@ -20,6 +20,8 @@
     },
     "workbench.colorTheme": "Winter is Coming (Dark Blue)",
     "workbench.iconTheme": "material-icon-theme",
+    "workbench.preferredHighContrastColorTheme": "Tomorrow Night Blue",
+    "workbench.editor.empty.hint": "hidden",
     "terminal.integrated.fontSize": 15,
     "search.exclude": {
         "**/node_modules": true,
@@ -39,5 +41,9 @@
     "[github-actions-workflow]": {
         "editor.defaultFormatter": "redhat.vscode-yaml"
     },
-    "git.suggestSmartCommit": false
+    "git.suggestSmartCommit": false,
+    "yaml.disableSchemaDetection": [
+        "azure-pipelines.yml",
+        "azure-pipelines.yaml"
+    ]
 }
