@@ -49,7 +49,7 @@ Secrets are read from these vault items:
 Log in with your personal API key and unlock the vault before applying:
 
 ```bash
-bw config server <server-url>
+bw config server https://vaultwarden.jnobrega.com
 bw login --apikey   # prompts for client_id / client_secret
 export BW_SESSION="$(bw unlock --raw)"
 ```
