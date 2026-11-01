@@ -15,7 +15,7 @@ palette = "coolnight"
 navy = "#214969"
 light = "#CBE0F0"
 dark = "#011423"
-sky = "#0FC5ED"
+sky = "#063F52"
 violet = "#a277ff"
 crimson = "#E52E2E"
 amber = "#FFE073"
@@ -51,7 +51,7 @@ format = "[@$hostname ](bg:navy fg:light)[](fg:navy) "
 truncation_length = 3
 truncate_to_repo = true
 read_only = " "
-format = "[](fg:sky)[ $path$read_only ](bg:sky fg:dark)[](fg:sky) "
+format = "[](fg:sky)[ $path$read_only ](bg:sky fg:light)[](fg:sky) "
 
 # branch, state and status share one pill
 [git_branch]
