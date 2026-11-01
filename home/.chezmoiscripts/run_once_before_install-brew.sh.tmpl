@@ -3,13 +3,6 @@
 
 {{ if not .devcontainer -}}
 
-{{ if eq .chezmoi.os "darwin" -}}
-xcode-select -p 1>/dev/null
-if [[ $? -ne 0 ]]; then
-xcode-select --install
-fi
-{{ end -}}
-
 {{ if eq .osid "linux-ubuntu" -}}
   export DEBIAN_FRONTEND=noninteractive
 
@@ -28,7 +21,9 @@ fi
 if which -s brew; then
     echo 'Homebrew is already installed'
 else
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    # the installer runs sudo without prompting, so cache credentials first
+    sudo -v
+    NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
 {{ end -}}
