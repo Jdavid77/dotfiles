@@ -1,0 +1,72 @@
+brew "awscli"
+brew "docker"
+brew "crane"
+brew "dive"
+brew "hadolint"
+brew "git"
+brew "go"
+brew "helm"
+brew "helmfile"
+brew "jq"
+brew "k9s"
+brew "krew"
+brew "brumhard/tap/krewfile"
+brew "kubernetes-cli"
+brew "kubectx"
+brew "kustomize"
+brew "kind"
+brew "cmctl"
+brew "kubeconform"
+brew "conftest"
+brew "devsy-org/tap/devsy"
+brew "pre-commit"
+brew "yq"
+brew "trivy"
+brew "yamlfmt"
+brew "yamllint"
+brew "gh"
+brew "go-task"
+brew "uv"
+brew "herdr"
+brew "tree"
+brew "watch"
+brew "tenv"
+brew "zoxide"
+brew "bitwarden-cli"
+brew "rtk"
+{{- if .isWorkComputer }}
+
+# work
+brew "azure-cli"
+brew "Azure/kubelogin/kubelogin"
+{{- else }}
+
+# personal
+brew "age"
+brew "sops"
+brew "talosctl"
+brew "fluxcd/tap/flux"
+brew "controlplaneio-fluxcd/tap/flux-operator"
+brew "controlplaneio-fluxcd/tap/flux-operator-mcp"
+{{- end }}
+
+if OS.mac?
+  cask "font-meslo-lg-nerd-font"
+  cask "fork"
+  cask "google-chrome"
+  cask "visual-studio-code"
+  cask "ghostty"
+  cask "obsidian"
+  cask "flux-app" # red light screen
+  cask "docker-desktop"
+{{- if not .isWorkComputer }}
+
+  # personal
+  cask "tailscale"
+  cask "yubico-authenticator"
+  cask "yubico-yubikey-manager"
+  cask "capcut"
+  cask "balenaetcher"
+  cask "raspberry-pi-imager"
+{{- end }}
+end

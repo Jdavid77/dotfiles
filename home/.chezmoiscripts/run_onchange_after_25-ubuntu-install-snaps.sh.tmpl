@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+{{ if and (not .devcontainer) (eq .osid "linux-ubuntu") .hasGUI -}}
+set -euo pipefail
+
+{{ range .packages.snaps.vanilla -}}
+sudo snap install {{ . | quote }}
+{{ end -}}
+{{ range .packages.snaps.classic -}}
+sudo snap install --classic {{ . | quote }}
+{{ end -}}
+{{ end -}}

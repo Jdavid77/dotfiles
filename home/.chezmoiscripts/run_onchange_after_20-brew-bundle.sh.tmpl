@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+{{ if not .devcontainer -}}
+# Brewfile hash: {{ includeTemplate "dot_config/homebrew/Brewfile.tmpl" . | sha256sum }}
+set -euo pipefail
+
+for b in /opt/homebrew/bin/brew /home/linuxbrew/.linuxbrew/bin/brew; do
+    [ -x "$b" ] && eval "$("$b" shellenv)"
+done
+
+brew bundle --file="{{ .chezmoi.homeDir }}/.config/homebrew/Brewfile"
+brew cleanup --prune=all
+{{ end -}}
