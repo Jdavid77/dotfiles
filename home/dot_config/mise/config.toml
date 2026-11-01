@@ -4,7 +4,6 @@ bat = "latest"
 chezmoi = "latest"
 node = "latest"
 "aqua:neovim/neovim" = "latest"
-lsd = "latest"
 eza = "latest"
 
 [settings]
