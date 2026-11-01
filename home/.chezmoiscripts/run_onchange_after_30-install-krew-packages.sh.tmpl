@@ -6,8 +6,11 @@
 # ---------------------------------------------------------------------------------------------------------------------
 
 {{ if not .devcontainer -}}
+set -euo pipefail
 
-go install github.com/brumhard/krewfile@latest
+for b in /opt/homebrew/bin/brew /home/linuxbrew/.linuxbrew/bin/brew; do
+    [ -x "$b" ] && eval "$("$b" shellenv)"
+done
 krewfile -command "kubectl krew" -file {{ .chezmoi.homeDir }}/.config/krewfile/krewfile -upgrade
 
 {{ end -}}
